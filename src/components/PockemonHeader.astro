@@ -1,0 +1,37 @@
+<div class="pockemon-header">
+  <span class="pockemon-header__title">Покемоны Api</span>
+  <div class="pockemon-header__desc-container">
+    <div class="pockemon-header__logo-container">
+      <img src="/Icon.png" alt="Иконка" class="pockemon-header__logo" />
+    </div>
+    <span class="pockemon-header__desc">Нажмите на нужного покемона</span>
+  </div>
+</div>
+
+<style>
+  .pockemon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 54px;
+  }
+
+  .pockemon-header__title {
+    border: 1px solid #fff;
+    padding: 7px;
+    text-transform: uppercase;
+  }
+
+  .pockemon-header__desc-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .pockemon-header__desc {
+    display: inline-block;
+    width: calc(100% - 110px);
+  }
+</style>

@@ -1,0 +1,18 @@
+---
+// Компоненты
+import PockemonsLeft from '../layouts/pockemons-left';
+import PockemonButton from './pockemon-button';
+
+//Типы
+import type { IPockemons } from '../types';
+
+interface Props {
+  pockemons: IPockemons[];
+}
+
+const { pockemons } = Astro.props as Props;
+---
+
+<PockemonsLeft>
+  {pockemons.map((pockemon) => <PockemonButton pockemonName={pockemon.name} />)}
+</PockemonsLeft>

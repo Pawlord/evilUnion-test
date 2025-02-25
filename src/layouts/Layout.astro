@@ -1,5 +1,5 @@
 ---
-
+import PockemonHeader from '../components/PockemonHeader.astro';
 ---
 
 <!doctype html>
@@ -14,18 +14,39 @@
 	<body>
 		<div class="main-layout">
 			<div class="pockemon-container">
-				<slot />
+				<PockemonHeader />
+
+				<div class="pockemons-main">
+					<slot />
+				</div>
 			</div>
 		</div>
 	</body>
 </html>
 
 <style>
+	@font-face {
+		font-family: 'Raleway';
+		font-style: normal;
+		font-weight: 500;
+		src: url('/fonts/raleway-regular.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Raleway';
+		font-style: weight;
+		font-weight: 700;
+		src: url('/fonts/raleway-700.woff2') format('woff2');
+	}
+
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		font-size: 14px;
+		color: #fff;
+		font-family: 'Raleway', 'Arial';
 	}
 
 	.main-layout {
@@ -40,7 +61,11 @@
 
 	.pockemon-container {
 		padding-inline: 150px;
-		border: 1px solid white;
 		min-width: 1280px;
+	}
+
+	.pockemons-main {
+		display: flex;
+		height: 500px;
 	}
 </style>

@@ -1,5 +1,18 @@
 ---
+// Компоненты
 import Layout from '../layouts/Layout.astro';
+import PockemonMain from '../components/pockemon-main';
+
+// Функции
+import axios from 'axios';
+
+//Типы
+import type { IPockemons } from '../types';
+
+const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=10');
+const pockemons: IPockemons[] = response.data.results;
 ---
 
-<Layout />
+<Layout>
+  <PockemonMain pockemons={pockemons} client:load />
+</Layout>
